@@ -1,65 +1,140 @@
-import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  dashboardStats,
+  portfolioMetrics,
+  abComparisons,
+  monthlyTrends,
+  riskAlerts,
+  collectionCases,
+} from "@/lib/data";
+import { OverviewCharts } from "@/components/dashboard/overview-charts";
+import { ABComparisonTable } from "@/components/dashboard/ab-comparison";
+import { RecentAlerts } from "@/components/dashboard/recent-alerts";
+import { ActiveCases } from "@/components/dashboard/active-cases";
 
-export default function Home() {
+function formatCurrency(n: number) {
+  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
+  if (n >= 1_000) return `$${(n / 1_000).toFixed(0)}K`;
+  return `$${n}`;
+}
+
+const STATS = [
+  {
+    label: "Total Exposure",
+    value: formatCurrency(portfolioMetrics.totalExposure),
+    sub: `${portfolioMetrics.totalBuyers} buyers, ${portfolioMetrics.totalSellers} sellers`,
+  },
+  {
+    label: "Recovery Rate",
+    value: `${(dashboardStats.recoveryRate * 100).toFixed(0)}%`,
+    sub: "Agent-managed",
+    accent: true,
+  },
+  {
+    label: "Overdue Amount",
+    value: formatCurrency(portfolioMetrics.overdueAmount),
+    sub: `${(portfolioMetrics.overdueRate * 100).toFixed(1)}% of exposure`,
+    warn: true,
+  },
+  {
+    label: "Avg Days to Payment",
+    value: `${portfolioMetrics.avgDaysToPayment}`,
+    sub: "Down from 45 days (rule-based)",
+  },
+  {
+    label: "Active Alerts",
+    value: String(dashboardStats.activeAlerts),
+    sub: `${riskAlerts.filter((a) => a.severity === "critical").length} critical`,
+    warn: dashboardStats.activeAlerts > 10,
+  },
+  {
+    label: "Agent Actions Today",
+    value: String(dashboardStats.agentActionsToday),
+    sub: `${dashboardStats.activeCases} active cases`,
+  },
+];
+
+export default function OverviewPage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="space-y-6">
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1DB954]/20 bg-[#1DB954]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#1DB954] mb-3">
+            Live Dashboard
+          </span>
+          <h1 className="text-2xl font-bold text-white">
+            Portfolio Overview
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-1 text-sm text-[#9ca3af]">
+            Real-time AI collections intelligence across Backd&apos;s B2B net
+            terms portfolio
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+        <Badge
+          variant="outline"
+          className="border-[#1DB954]/20 bg-[#1DB954]/10 text-[#1DB954]"
+        >
+          AI Agent Active
+        </Badge>
+      </div>
+
+      {/* KPI Cards */}
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-6">
+        {STATS.map((stat) => (
+          <Card key={stat.label} className={`bg-[#161616] border border-[#262626] ${stat.accent ? "border-t-2 border-t-[#1DB954]" : ""}`}>
+            <CardContent className="pt-5 pb-4 px-4">
+              <p className="text-[10px] font-semibold text-[#6b7280] uppercase tracking-wider">
+                {stat.label}
+              </p>
+              <p
+                className={`mt-1 text-2xl font-bold ${stat.accent ? "text-[#1DB954]" : stat.warn ? "text-[#f59e0b]" : "text-white"}`}
+              >
+                {stat.value}
+              </p>
+              <p className="mt-0.5 text-xs text-[#6b7280]">{stat.sub}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      {/* Charts Row */}
+      <OverviewCharts trends={monthlyTrends} />
+
+      {/* Bottom Row: A/B Comparison + Alerts + Cases */}
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <Card className="bg-[#161616] border border-[#262626] lg:col-span-1">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm font-semibold text-[#d1d5db]">
+              Agent vs. Rule-Based
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ABComparisonTable data={abComparisons} />
+          </CardContent>
+        </Card>
+        <Card className="bg-[#161616] border border-[#262626]">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm font-semibold text-[#d1d5db]">
+              Recent Alerts
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <RecentAlerts alerts={riskAlerts.slice(0, 6)} />
+          </CardContent>
+        </Card>
+        <Card className="bg-[#161616] border border-[#262626]">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm font-semibold text-[#d1d5db]">
+              Active Cases
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ActiveCases cases={collectionCases.filter((c) => !c.isResolved).slice(0, 6)} />
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

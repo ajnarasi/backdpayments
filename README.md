@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Backd CollectIQ
+
+AI-Powered Collections & Risk Intelligence for B2B Net Terms
+
+## What Is This?
+
+CollectIQ is a working prototype demonstrating how AI agents can transform Backd's collections from reactive to predictive. It addresses Backd's #1 business risk: credit losses on underwritten net terms.
+
+**Built by Ajay Narasimma** as a Head of Product interview project for BackdPayments.
+
+## The Problem
+
+Backd pays sellers upfront and extends net terms (Net 30/60/90) to B2B buyers, assuming credit risk. Collections is where B2B lending companies win or die. Current approaches are manual, reactive, and poorly instrumented.
+
+## The Solution: 3 Modules
+
+### 1. Agentic Collections Engine (Core)
+- AI agent autonomously manages the collections lifecycle
+- Adaptive dunning sequences, payment plan negotiation, intelligent escalation
+- Decision transparency: see WHY the agent chose each action
+- Multi-rail awareness (ACH, RTP, wire) for payment collection
+- A/B comparison: agent-managed vs. rule-based recovery rates
+
+### 2. Predictive Risk Dashboard
+- Early warning system flags potential defaults 30+ days before due date
+- Portfolio health visualization by risk tier, industry, geography
+- Interactive scenario modeling for credit policy optimization
+
+### 3. Network Intelligence (Strategic Vision)
+- Buyer-seller network graph visualization
+- Network-enhanced credit scoring (cross-seller payment data)
+- Expansion recommendations and risk cluster identification
+
+## Tech Stack
+
+- **Next.js 16** + TypeScript + App Router
+- **Tailwind CSS v4** + shadcn/ui
+- **Recharts** for data visualization
+- **react-force-graph-2d** for network graph
+- **Claude API** (Anthropic SDK) for live agent analysis
+- In-memory synthetic data (200 buyers, 30 sellers, 800+ invoices)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Enable Live AI Agent
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Set your Anthropic API key to enable live Claude analysis on collection cases:
 
-## Learn More
+```bash
+echo "ANTHROPIC_API_KEY=your-key-here" > .env.local
+```
 
-To learn more about Next.js, take a look at the following resources:
+Without the API key, the agent runs in demo mode with pre-computed responses.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Page | Description |
+|------|-------------|
+| `/` | Portfolio overview with KPIs, charts, A/B comparison |
+| `/collections` | Collection cases list with showcase cases |
+| `/collections/[buyerId]` | Agent action timeline with live analysis |
+| `/risk` | Risk alerts, portfolio charts, scenario modeling |
+| `/network` | Buyer-seller network graph and insights |
+| `/checkout` | Mock B2B net terms checkout flow |
+| `/strategy` | 90-day product roadmap for Backd |
 
-## Deploy on Vercel
+## Key Showcase Cases
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Three handcrafted collection cases demonstrate the agent's capabilities:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Midwest Restaurant Group** -- Agent detected cash flow timing pattern, offered restructured payment, achieved 100% recovery in 7 days
+2. **Coastal Equipment Rentals** -- Deteriorating buyer with sector headwinds, agent adapted strategy across 8 actions, 67% recovered via installment plan
+3. **Desert Valley Materials** -- Critical default path, agent exhausted all options over 30 days before recommending human handoff with 35% recovery probability
+
+## Deploy
+
+```bash
+npm run build
+```
+
+Deploy to Vercel, Netlify, or any Node.js hosting. No database required.

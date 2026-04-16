@@ -48,83 +48,341 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+/* ================================================================
+   Backd CollectIQ — Design System
+   Pixel-matched to Fiserv Brain Executive Brief (localhost:3100)
+   Accent: Spotify Green #1DB954 (replaces #ff6b1a orange)
+   ================================================================ */
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+:root {
+  /* Palette — exact match to reference */
+  --bg-primary: #0e0e0e;
+  --bg-card: #161616;
+  --bg-card-light: #1c1c1c;
+  --border: #262626;
+  --border-strong: #3a3a3a;
+  --accent: #1DB954;
+  --accent-hover: #1ed760;
+  --accent-dim: #158a3e;
+  --accent-glow: rgba(29, 185, 84, 0.25);
+  --accent-green: #1DB954;
+  --accent-red: #ef4444;
+  --accent-amber: #f59e0b;
+  --accent-purple: #a78bfa;
+  --text-primary: #fafafa;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --font-sans: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', Menlo, Consolas, monospace;
+
+  /* shadcn overrides */
+  --background: #0e0e0e;
+  --foreground: #fafafa;
+  --card: #161616;
+  --card-foreground: #fafafa;
+  --popover: #1c1c1c;
+  --popover-foreground: #fafafa;
+  --primary: #1DB954;
+  --primary-foreground: #ffffff;
+  --secondary: #1c1c1c;
+  --secondary-foreground: #fafafa;
+  --muted: #1c1c1c;
+  --muted-foreground: #9ca3af;
+  --accent: #1c1c1c;
+  --accent-foreground: #fafafa;
+  --destructive: #ef4444;
+  --border: #262626;
+  --input: #262626;
+  --ring: #1DB954;
+  --chart-1: #1DB954;
+  --chart-2: #1ed760;
+  --chart-3: #158a3e;
+  --chart-4: #3ee85a;
+  --chart-5: #0d5c26;
+  --radius: 1rem;
+  --sidebar: #0e0e0e;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #1DB954;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1c1c1c;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #262626;
+  --sidebar-ring: #1DB954;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    box-sizing: border-box;
   }
   body {
-    @apply bg-background text-foreground;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
-  html {
-    @apply font-sans;
-  }
+}
+
+/* ─── Typography scale (exact match to reference) ─────────────── */
+.deck-h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.0;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+.deck-h2 {
+  font-size: clamp(2.25rem, 4.8vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.005em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+.deck-h3 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+}
+.deck-body {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 60ch;
+}
+.deck-lead {
+  font-size: 1.375rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 70ch;
+}
+
+/* ─── Top Tab Bar (pixel-match to reference) ──────────────────── */
+.tab-bar {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 40px;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.tab-link {
+  background: transparent;
+  border: 0;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 10px 20px 12px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.tab-link:hover { color: var(--text-secondary); }
+.tab-link::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 4px;
+  height: 2px;
+  background: var(--accent-green);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tab-link.active { color: var(--accent-green); }
+.tab-link.active::after { transform: scaleX(1); }
+
+@media (max-width: 900px) {
+  .tab-bar { padding: 12px 16px; gap: 0; overflow-x: auto; }
+  .tab-link { padding: 8px 12px 10px; font-size: 0.7rem; letter-spacing: 0.12em; }
+}
+
+/* ─── Kicker badge (exact match) ──────────────────────────────── */
+.kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-green);
+  padding: 6px 12px;
+  border: 1px solid var(--accent-green);
+  border-radius: 999px;
+  margin-bottom: 28px;
+}
+.kicker.red { color: var(--accent-red); border-color: var(--accent-red); }
+.kicker.purple { color: var(--accent-purple); border-color: var(--accent-purple); }
+.kicker.amber { color: var(--accent-amber); border-color: var(--accent-amber); }
+
+/* ─── Cards (exact match: 16px radius, 32px padding, hover lift) */
+.deck-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.deck-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--text-muted);
+}
+.deck-card.green { border-left: 4px solid var(--accent-green); }
+.deck-card.purple { border-left: 4px solid var(--accent-purple); }
+.deck-card.red { border-left: 4px solid var(--accent-red); }
+.deck-card.amber { border-left: 4px solid var(--accent-amber); }
+
+/* Card title (exact: 1.35rem, 800 weight, -0.015em) */
+.deck-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+.deck-card-title.green { color: var(--accent-green); }
+.deck-card-title.purple { color: var(--accent-purple); }
+.deck-card-title.red { color: var(--accent-red); }
+.deck-card-title.amber { color: var(--accent-amber); }
+
+/* Card body (exact: 1rem, #9ca3af, 1.6 line-height) */
+.deck-card-body {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.deck-card-body strong { color: var(--text-primary); font-weight: 600; }
+
+/* ─── Stat cards (exact match to reference stat boxes) ────────── */
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px;
+}
+.stat-card .stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.stat-card .stat-value {
+  font-size: clamp(2.75rem, 5.5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.stat-card .stat-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* ─── Big stat number ─────────────────────────────────────────── */
+.big-stat {
+  font-size: clamp(4.5rem, 11vw, 8.5rem);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+/* ─── Gradient bar (accent divider) ───────────────────────────── */
+.gradient-bar {
+  width: 120px;
+  height: 3px;
+  background: var(--accent-green);
+  border-radius: 2px;
+  margin: 24px 0;
+}
+.gradient-bar.wide { width: 260px; }
+
+/* ─── Grid utilities (match reference) ────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+@media (max-width: 1024px) {
+  .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ─── Scrollbar (dark, subtle) ────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0e0e0e; }
+::-webkit-scrollbar-thumb { background: #3a3a3a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #4a4a4a; }
+
+/* ─── Section layout (full-viewport scroll deck) ──────────────── */
+.deck-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 0 100px;
+}
+
+/* ─── Scroll dot nav (right side, matches reference) ──────────── */
+.scroll-dot-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 50;
+}
+.scroll-dot-nav a {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  opacity: 0.35;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.scroll-dot-nav a:hover { opacity: 0.9; }
+.scroll-dot-nav a.active {
+  opacity: 1;
+  background: var(--accent-green);
+  width: 28px;
+  border-radius: 5px;
+}
+@media (max-width: 900px) { .scroll-dot-nav { display: none; } }
+
+/* ─── Scroll-triggered fade-up animation ──────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--d, 0s);
+}
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
