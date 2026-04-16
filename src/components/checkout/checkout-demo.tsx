@@ -41,9 +41,9 @@ export function CheckoutDemo() {
               <div
                 className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${
                   step === s
-                    ? "bg-[#1DB954]/100 text-white"
+                    ? "bg-[#ff6b1a]/100 text-white"
                     : (["cart", "apply", "approved", "confirmed", "lifecycle"].indexOf(step) > i)
-                      ? "bg-[#1DB954] text-white"
+                      ? "bg-[#ff6b1a] text-white"
                       : "bg-[#262626] text-[#9ca3af]"
                 }`}
               >
@@ -56,7 +56,7 @@ export function CheckoutDemo() {
               {i < 4 && (
                 <div
                   className={`h-px w-8 ${
-                    (["cart", "apply", "approved", "confirmed", "lifecycle"].indexOf(step) > i) ? "bg-[#1DB954]" : "bg-[#262626]"
+                    (["cart", "apply", "approved", "confirmed", "lifecycle"].indexOf(step) > i) ? "bg-[#ff6b1a]" : "bg-[#262626]"
                   }`}
                 />
               )}
@@ -106,21 +106,21 @@ export function CheckoutDemo() {
                 <span>${total.toLocaleString()}</span>
               </div>
             </div>
-            <div className="rounded-lg border-2 border-[#1DB954]/20 bg-[#1DB954]/10 p-4">
+            <div className="rounded-lg border-2 border-[#ff6b1a]/20 bg-[#ff6b1a]/10 p-4">
               <div className="flex items-center gap-2 mb-1">
-                <div className="flex h-6 w-6 items-center justify-center rounded bg-[#1DB954]/100">
+                <div className="flex h-6 w-6 items-center justify-center rounded bg-[#ff6b1a]/100">
                   <span className="text-xs font-bold text-white">B</span>
                 </div>
-                <span className="text-sm font-bold text-[#1DB954]">
+                <span className="text-sm font-bold text-[#ff6b1a]">
                   Pay with Backd Net Terms
                 </span>
               </div>
-              <p className="text-xs text-[#1DB954]">
+              <p className="text-xs text-[#ff6b1a]">
                 Get approved in seconds. Pay in 30, 60, or 90 days. No interest on Net 30.
               </p>
             </div>
             <Button
-              className="w-full bg-[#1DB954]/100 hover:bg-[#1ed760]"
+              className="w-full bg-[#ff6b1a]/100 hover:bg-[#ff7f33]"
               onClick={() => setStep("apply")}
             >
               Apply for Net Terms
@@ -160,14 +160,14 @@ export function CheckoutDemo() {
             </div>
             <div className="rounded-lg border border-[#262626] bg-[#161616] p-3">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-[#1DB954]" />
+                <ShieldCheck className="h-4 w-4 text-[#ff6b1a]" />
                 <span className="text-xs text-[#9ca3af]">
                   Instant verification via Backd&apos;s proprietary underwriting engine. No hard credit pull.
                 </span>
               </div>
             </div>
             <Button
-              className="w-full bg-[#1DB954]/100 hover:bg-[#1ed760]"
+              className="w-full bg-[#ff6b1a]/100 hover:bg-[#ff7f33]"
               onClick={() => setStep("approved")}
             >
               Verify & Get Decision
@@ -181,17 +181,17 @@ export function CheckoutDemo() {
       {step === "approved" && (
         <Card className="border border-[#262626] ">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg text-[#1DB954]">
+            <CardTitle className="flex items-center gap-2 text-lg text-[#ff6b1a]">
               <CheckCircle className="h-5 w-5" />
               Approved!
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="rounded-lg border-2 border-[#1DB954]/20 bg-[#1DB954]/10 p-4 text-center">
-              <p className="text-2xl font-bold text-[#1DB954]">
+            <div className="rounded-lg border-2 border-[#ff6b1a]/20 bg-[#ff6b1a]/10 p-4 text-center">
+              <p className="text-2xl font-bold text-[#ff6b1a]">
                 $50,000 Credit Line
               </p>
-              <p className="text-sm text-[#1DB954]">Approved in 3.2 seconds</p>
+              <p className="text-sm text-[#ff6b1a]">Approved in 3.2 seconds</p>
             </div>
             <div className="space-y-2">
               <p className="text-xs font-semibold text-[#9ca3af] uppercase">Choose Your Terms</p>
@@ -204,7 +204,7 @@ export function CheckoutDemo() {
                   key={opt.term}
                   className={`flex w-full items-center justify-between rounded-lg border-2 p-3 text-left transition-colors ${
                     opt.highlight
-                      ? "border-[#1DB954] bg-[#1DB954]/10"
+                      ? "border-[#ff6b1a] bg-[#ff6b1a]/10"
                       : "border-[#262626] hover:border-[#3a3a3a]"
                   }`}
                   onClick={() => setStep("confirmed")}
@@ -218,7 +218,7 @@ export function CheckoutDemo() {
                       ${opt.monthly.toLocaleString()}
                     </p>
                     {opt.highlight && (
-                      <Badge className="bg-[#1DB954]/100 text-white text-[9px]">
+                      <Badge className="bg-[#ff6b1a]/100 text-white text-[9px]">
                         RECOMMENDED
                       </Badge>
                     )}
@@ -234,17 +234,17 @@ export function CheckoutDemo() {
       {step === "confirmed" && (
         <Card className="border border-[#262626] ">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg text-[#1DB954]">
+            <CardTitle className="flex items-center gap-2 text-lg text-[#ff6b1a]">
               <CheckCircle className="h-5 w-5" />
               Order Confirmed
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="rounded-lg bg-[#1DB954]/10 p-4 text-center">
-              <p className="text-lg font-bold text-[#1DB954]">
+            <div className="rounded-lg bg-[#ff6b1a]/10 p-4 text-center">
+              <p className="text-lg font-bold text-[#ff6b1a]">
                 Net 30 Terms Applied
               </p>
-              <p className="text-sm text-[#1DB954]">
+              <p className="text-sm text-[#ff6b1a]">
                 ${total.toLocaleString()} due by{" "}
                 {new Date(Date.now() + 30 * 86400000).toLocaleDateString()}
               </p>
@@ -270,7 +270,7 @@ export function CheckoutDemo() {
         <Card className="border border-[#262626] ">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
-              <Bot className="h-5 w-5 text-[#1DB954]" />
+              <Bot className="h-5 w-5 text-[#ff6b1a]" />
               CollectIQ Takes Over
             </CardTitle>
           </CardHeader>
@@ -288,7 +288,7 @@ export function CheckoutDemo() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3 rounded-lg border border-[#1DB954]/20 bg-[#1DB954]/10 p-3"
+                  className="flex items-start gap-3 rounded-lg border border-[#ff6b1a]/20 bg-[#ff6b1a]/10 p-3"
                 >
                   <span className="text-lg">{item.icon}</span>
                   <div>
@@ -309,7 +309,7 @@ export function CheckoutDemo() {
               </Button>
               <a
                 href="/collections"
-                className="inline-flex h-9 items-center justify-center rounded-lg bg-[#1DB954]/100 px-4 text-sm font-medium text-white hover:bg-[#1ed760] transition-colors"
+                className="inline-flex h-9 items-center justify-center rounded-lg bg-[#ff6b1a]/100 px-4 text-sm font-medium text-white hover:bg-[#ff7f33] transition-colors"
               >
                 View Collections Engine
               </a>

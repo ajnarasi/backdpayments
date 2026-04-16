@@ -61,7 +61,7 @@ export default function OverviewPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1DB954]/20 bg-[#1DB954]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#1DB954] mb-3">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#ff6b1a]/20 bg-[#ff6b1a]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#ff6b1a] mb-3">
             Live Dashboard
           </span>
           <h1 className="text-2xl font-bold text-white">
@@ -74,7 +74,7 @@ export default function OverviewPage() {
         </div>
         <Badge
           variant="outline"
-          className="border-[#1DB954]/20 bg-[#1DB954]/10 text-[#1DB954]"
+          className="border-[#ff6b1a]/20 bg-[#ff6b1a]/10 text-[#ff6b1a]"
         >
           AI Agent Active
         </Badge>
@@ -83,13 +83,13 @@ export default function OverviewPage() {
       {/* KPI Cards */}
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-6">
         {STATS.map((stat) => (
-          <Card key={stat.label} className={`bg-[#161616] border border-[#262626] ${stat.accent ? "border-t-2 border-t-[#1DB954]" : ""}`}>
+          <Card key={stat.label} className={`bg-[#161616] border border-[#262626] ${stat.accent ? "border-t-2 border-t-[#ff6b1a]" : ""}`}>
             <CardContent className="pt-5 pb-4 px-4">
               <p className="text-[10px] font-semibold text-[#6b7280] uppercase tracking-wider">
                 {stat.label}
               </p>
               <p
-                className={`mt-1 text-2xl font-bold ${stat.accent ? "text-[#1DB954]" : stat.warn ? "text-[#f59e0b]" : "text-white"}`}
+                className={`mt-1 text-2xl font-bold ${stat.accent ? "text-[#ff6b1a]" : stat.warn ? "text-[#f59e0b]" : "text-white"}`}
               >
                 {stat.value}
               </p>

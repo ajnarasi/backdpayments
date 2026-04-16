@@ -24,11 +24,11 @@ export function TopTabBar() {
         href="/"
         className="flex items-center gap-2 mr-8 shrink-0 no-underline"
       >
-        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#1DB954]">
+        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#ff6b1a]">
           <span className="text-sm font-black text-white tracking-tighter">B</span>
         </div>
         <span className="text-xs font-bold text-[#fafafa] tracking-tight hidden md:inline">
-          Backd <span className="text-[#1DB954]">CollectIQ</span>
+          Backd <span className="text-[#ff6b1a]">CollectIQ</span>
         </span>
       </Link>
 

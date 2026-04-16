@@ -5,9 +5,9 @@ import { TrendingUp, AlertTriangle, Zap } from "lucide-react";
 import type { NetworkInsight } from "@/types";
 
 const TYPE_CONFIG: Record<string, { icon: typeof TrendingUp; color: string; bgColor: string; label: string }> = {
-  expansion: { icon: TrendingUp, color: "text-[#1DB954]", bgColor: "bg-[#1DB954]/10 border-[#1DB954]/20", label: "Expansion" },
+  expansion: { icon: TrendingUp, color: "text-[#ff6b1a]", bgColor: "bg-[#ff6b1a]/10 border-[#ff6b1a]/20", label: "Expansion" },
   risk_cluster: { icon: AlertTriangle, color: "text-[#ef4444]", bgColor: "bg-[#ef4444]/10 border-[#ef4444]/20", label: "Risk" },
-  network_credit: { icon: Zap, color: "text-[#1DB954]", bgColor: "bg-[#1DB954]/10 border-[#1DB954]/20", label: "Credit" },
+  network_credit: { icon: Zap, color: "text-[#ff6b1a]", bgColor: "bg-[#ff6b1a]/10 border-[#ff6b1a]/20", label: "Credit" },
 };
 
 function formatCurrency(n: number) {
@@ -47,7 +47,7 @@ export function NetworkInsightsList({ insights }: { insights: NetworkInsight[] }
                 {insight.affectedNodes.length} nodes affected
               </span>
               <span
-                className={`text-xs font-bold ${isPositive ? "text-[#1DB954]" : "text-[#ef4444]"}`}
+                className={`text-xs font-bold ${isPositive ? "text-[#ff6b1a]" : "text-[#ef4444]"}`}
               >
                 {isPositive ? "+" : "-"}
                 {formatCurrency(insight.impact)}/yr

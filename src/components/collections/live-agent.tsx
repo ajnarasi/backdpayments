@@ -31,14 +31,14 @@ const ACTION_LABELS: Record<string, string> = {
 };
 
 const TONE_COLORS: Record<string, string> = {
-  collaborative: "bg-[#1DB954]/10 text-[#1DB954]",
+  collaborative: "bg-[#ff6b1a]/10 text-[#ff6b1a]",
   firm: "bg-[#f59e0b]/10 text-[#f59e0b]",
   urgent: "bg-[#ef4444]/10 text-[#ef4444]",
   empathetic: "bg-[#a78bfa]/10 text-[#a78bfa]",
 };
 
 const URGENCY_COLORS: Record<string, string> = {
-  low: "bg-[#1DB954]/10 text-[#1DB954]",
+  low: "bg-[#ff6b1a]/10 text-[#ff6b1a]",
   medium: "bg-[#f59e0b]/10 text-[#f59e0b]",
   high: "bg-[#ef4444]/10 text-[#ef4444]",
 };
@@ -78,10 +78,10 @@ export function LiveAgent({
 
   if (!analysis) {
     return (
-      <Card className="border-2 border-dashed border-[#1DB954]/20 bg-[#161616]">
+      <Card className="border-2 border-dashed border-[#ff6b1a]/20 bg-[#161616]">
         <CardContent className="flex flex-col items-center justify-center py-8">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1DB954]/10">
-            <Zap className="h-6 w-6 text-[#1DB954]" />
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#ff6b1a]/10">
+            <Zap className="h-6 w-6 text-[#ff6b1a]" />
           </div>
           <h3 className="mt-3 text-sm font-bold text-white">
             Live Agent Analysis
@@ -91,7 +91,7 @@ export function LiveAgent({
             the optimal next collection action.
           </p>
           <Button
-            className="mt-4 bg-[#1DB954] hover:bg-[#1ed760] gap-2"
+            className="mt-4 bg-[#ff6b1a] hover:bg-[#ff7f33] gap-2"
             onClick={runAnalysis}
             disabled={loading || !buyer}
           >
@@ -116,16 +116,16 @@ export function LiveAgent({
   }
 
   return (
-    <Card className="border-2 border-[#1DB954]/30 bg-[#161616]">
+    <Card className="border-2 border-[#ff6b1a]/30 bg-[#161616]">
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2 text-sm font-semibold text-[#1DB954]">
+          <CardTitle className="flex items-center gap-2 text-sm font-semibold text-[#ff6b1a]">
             <Bot className="h-4 w-4" />
             Live Agent Analysis
           </CardTitle>
           <div className="flex items-center gap-2">
             {analysis.isLive ? (
-              <Badge className="bg-[#1DB954] text-white text-[10px]">
+              <Badge className="bg-[#ff6b1a] text-white text-[10px]">
                 LIVE CLAUDE
               </Badge>
             ) : (
@@ -166,14 +166,14 @@ export function LiveAgent({
             Recommended Action
           </p>
           <div className="flex items-center gap-2 mb-1.5">
-            <Badge className="bg-[#1DB954] text-white text-xs">
+            <Badge className="bg-[#ff6b1a] text-white text-xs">
               {ACTION_LABELS[analysis.recommendedAction] ?? analysis.recommendedAction}
             </Badge>
             <Badge className={`text-[10px] ${TONE_COLORS[analysis.suggestedTone] ?? "bg-[#1c1c1c] text-[#9ca3af]"}`}>
               {analysis.suggestedTone} tone
             </Badge>
             {analysis.suggestedRail && (
-              <Badge variant="outline" className="text-[10px] border-[#1DB954]/20 text-[#1DB954]">
+              <Badge variant="outline" className="text-[10px] border-[#ff6b1a]/20 text-[#ff6b1a]">
                 Rail: {analysis.suggestedRail.toUpperCase()}
               </Badge>
             )}
@@ -194,7 +194,7 @@ export function LiveAgent({
             <p className="text-[10px] font-semibold text-[#6b7280] uppercase tracking-wider mb-1">
               Suggested Payment Plan
             </p>
-            <p className="text-xs text-[#d1d5db] bg-[#1DB954]/10 border border-[#1DB954]/20 rounded-lg p-2.5">
+            <p className="text-xs text-[#d1d5db] bg-[#ff6b1a]/10 border border-[#ff6b1a]/20 rounded-lg p-2.5">
               {analysis.paymentPlanDetails}
             </p>
           </div>
@@ -205,7 +205,7 @@ export function LiveAgent({
         <div className="flex items-center gap-4">
           <div>
             <p className="text-[10px] text-[#6b7280]">Recovery Probability</p>
-            <p className={`text-sm font-bold ${analysis.recoveryProbability > 0.7 ? "text-[#1DB954]" : analysis.recoveryProbability > 0.4 ? "text-[#f59e0b]" : "text-[#ef4444]"}`}>
+            <p className={`text-sm font-bold ${analysis.recoveryProbability > 0.7 ? "text-[#ff6b1a]" : analysis.recoveryProbability > 0.4 ? "text-[#f59e0b]" : "text-[#ef4444]"}`}>
               {(analysis.recoveryProbability * 100).toFixed(0)}%
             </p>
           </div>

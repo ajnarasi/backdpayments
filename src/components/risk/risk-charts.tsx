@@ -17,7 +17,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { PortfolioMetrics } from "@/types";
 
 const TIER_COLORS: Record<string, string> = {
-  low: "#1DB954",
+  low: "#ff6b1a",
   medium: "#F59E0B",
   high: "#F97316",
   critical: "#EF4444",
@@ -148,7 +148,7 @@ export function RiskCharts({ metrics }: { metrics: PortfolioMetrics }) {
                   boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
                 }}
               />
-              <Bar dataKey="exposure" fill="#1DB954" radius={[0, 4, 4, 0]} />
+              <Bar dataKey="exposure" fill="#ff6b1a" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </CardContent>

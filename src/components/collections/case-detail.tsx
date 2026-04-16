@@ -47,7 +47,7 @@ const ACTION_LABELS: Record<string, string> = {
 };
 
 const TIER_COLORS: Record<string, string> = {
-  low: "bg-[#1DB954]/10 text-[#1DB954] border-[#1DB954]/20",
+  low: "bg-[#ff6b1a]/10 text-[#ff6b1a] border-[#ff6b1a]/20",
   medium: "bg-[#f59e0b]/10 text-[#f59e0b] border-[#f59e0b]/20",
   high: "bg-[#f97316]/10 text-[#f97316] border-[#f97316]/20",
   critical: "bg-[#ef4444]/10 text-[#ef4444] border-[#ef4444]/20",
@@ -106,7 +106,7 @@ export function CaseDetail({
               {primaryCase.riskTier} risk
             </Badge>
             {primaryCase.id.startsWith("case-showcase") && (
-              <Badge className="bg-[#1DB954] text-white">SHOWCASE</Badge>
+              <Badge className="bg-[#ff6b1a] text-white">SHOWCASE</Badge>
             )}
           </div>
           <p className="mt-1 text-sm text-[#9ca3af]">
@@ -140,12 +140,12 @@ export function CaseDetail({
                         <div
                           className={`relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 ${
                             action.isAgentAction
-                              ? "border-[#1DB954]/30 bg-[#1DB954]/10"
+                              ? "border-[#ff6b1a]/30 bg-[#ff6b1a]/10"
                               : "border-[#3a3a3a] bg-[#1c1c1c]"
                           }`}
                         >
                           {action.isAgentAction ? (
-                            <Bot className="h-4 w-4 text-[#1DB954]" />
+                            <Bot className="h-4 w-4 text-[#ff6b1a]" />
                           ) : (
                             <Icon className="h-4 w-4 text-[#9ca3af]" />
                           )}
@@ -154,7 +154,7 @@ export function CaseDetail({
                         <div
                           className={`flex-1 rounded-lg border p-3 ${
                             action.isAgentAction
-                              ? "border-[#1DB954]/10 bg-[#1DB954]/5"
+                              ? "border-[#ff6b1a]/10 bg-[#ff6b1a]/5"
                               : "border-[#262626] bg-[#1c1c1c]/30"
                           }`}
                         >
@@ -164,7 +164,7 @@ export function CaseDetail({
                                 variant="outline"
                                 className={`text-[10px] ${
                                   action.isAgentAction
-                                    ? "border-[#1DB954]/20 bg-[#1DB954]/10 text-[#1DB954]"
+                                    ? "border-[#ff6b1a]/20 bg-[#ff6b1a]/10 text-[#ff6b1a]"
                                     : "border-[#3a3a3a] bg-[#1c1c1c] text-[#9ca3af]"
                                 }`}
                               >
@@ -186,9 +186,9 @@ export function CaseDetail({
                           </p>
 
                           {action.outcome && (
-                            <div className="mt-2 flex items-center gap-1.5 rounded border border-[#1DB954]/20 bg-[#1DB954]/10 px-2 py-1">
-                              <CheckCircle className="h-3 w-3 text-[#1DB954]" />
-                              <span className="text-xs text-[#1DB954]">
+                            <div className="mt-2 flex items-center gap-1.5 rounded border border-[#ff6b1a]/20 bg-[#ff6b1a]/10 px-2 py-1">
+                              <CheckCircle className="h-3 w-3 text-[#ff6b1a]" />
+                              <span className="text-xs text-[#ff6b1a]">
                                 {action.outcome}
                               </span>
                             </div>
@@ -198,7 +198,7 @@ export function CaseDetail({
                             <div className="mt-1">
                               <Badge
                                 variant="outline"
-                                className="text-[10px] border-[#1DB954]/20 bg-[#1DB954]/10 text-[#1DB954]"
+                                className="text-[10px] border-[#ff6b1a]/20 bg-[#ff6b1a]/10 text-[#ff6b1a]"
                               >
                                 Rail: {action.railUsed.toUpperCase()}
                               </Badge>
@@ -214,10 +214,10 @@ export function CaseDetail({
               {primaryCase.agentRecommendation && (
                 <>
                   <Separator className="my-4 bg-[#262626]" />
-                  <div className="rounded-lg border border-[#1DB954]/20 bg-[#1DB954]/5 p-4">
+                  <div className="rounded-lg border border-[#ff6b1a]/20 bg-[#ff6b1a]/5 p-4">
                     <div className="flex items-center gap-2 mb-2">
-                      <Bot className="h-4 w-4 text-[#1DB954]" />
-                      <span className="text-sm font-semibold text-[#1DB954]">
+                      <Bot className="h-4 w-4 text-[#ff6b1a]" />
+                      <span className="text-sm font-semibold text-[#ff6b1a]">
                         Agent Recommendation
                       </span>
                     </div>
@@ -248,7 +248,7 @@ export function CaseDetail({
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-xs text-[#9ca3af]">Recovered</span>
-                <span className="text-sm font-bold text-[#1DB954]">
+                <span className="text-sm font-bold text-[#ff6b1a]">
                   {formatCurrency(primaryCase.recoveredAmount)}
                 </span>
               </div>
@@ -282,7 +282,7 @@ export function CaseDetail({
               <div className="pt-2">
                 <div className="flex items-center justify-between text-xs mb-1">
                   <span className="text-[#9ca3af]">Recovery Progress</span>
-                  <span className="font-bold text-[#1DB954]">
+                  <span className="font-bold text-[#ff6b1a]">
                     {primaryCase.amount > 0
                       ? Math.round(
                           (primaryCase.recoveredAmount / primaryCase.amount) *
@@ -294,7 +294,7 @@ export function CaseDetail({
                 </div>
                 <div className="h-2 rounded-full bg-[#262626]">
                   <div
-                    className="h-2 rounded-full bg-[#1DB954] transition-all"
+                    className="h-2 rounded-full bg-[#ff6b1a] transition-all"
                     style={{
                       width: `${Math.min(100, primaryCase.amount > 0 ? (primaryCase.recoveredAmount / primaryCase.amount) * 100 : 0)}%`,
                     }}
@@ -357,7 +357,7 @@ export function CaseDetail({
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-[#9ca3af]">Order Trend</span>
                   <span
-                    className={`text-xs font-medium ${buyer.orderFrequencyTrend > 0 ? "text-[#1DB954]" : buyer.orderFrequencyTrend < -0.2 ? "text-[#ef4444]" : "text-[#f59e0b]"}`}
+                    className={`text-xs font-medium ${buyer.orderFrequencyTrend > 0 ? "text-[#ff6b1a]" : buyer.orderFrequencyTrend < -0.2 ? "text-[#ef4444]" : "text-[#f59e0b]"}`}
                   >
                     {buyer.orderFrequencyTrend > 0 ? "+" : ""}
                     {(buyer.orderFrequencyTrend * 100).toFixed(0)}%
@@ -368,7 +368,7 @@ export function CaseDetail({
                     Payment Velocity Trend
                   </span>
                   <span
-                    className={`text-xs font-medium ${buyer.paymentVelocityTrend > 0 ? "text-[#1DB954]" : buyer.paymentVelocityTrend < -0.15 ? "text-[#ef4444]" : "text-[#f59e0b]"}`}
+                    className={`text-xs font-medium ${buyer.paymentVelocityTrend > 0 ? "text-[#ff6b1a]" : buyer.paymentVelocityTrend < -0.15 ? "text-[#ef4444]" : "text-[#f59e0b]"}`}
                   >
                     {buyer.paymentVelocityTrend > 0 ? "+" : ""}
                     {(buyer.paymentVelocityTrend * 100).toFixed(0)}%
@@ -415,7 +415,7 @@ export function CaseDetail({
                         variant="outline"
                         className={`text-[9px] ${
                           inv.status === "paid"
-                            ? "border-[#1DB954]/20 text-[#1DB954]"
+                            ? "border-[#ff6b1a]/20 text-[#ff6b1a]"
                             : inv.status === "overdue" ||
                                 inv.status === "defaulted"
                               ? "border-[#ef4444]/20 text-[#ef4444]"

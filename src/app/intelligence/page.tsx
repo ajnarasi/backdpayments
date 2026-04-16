@@ -23,27 +23,27 @@ const FLYWHEEL_STAGES = [
     icon: Database,
     label: "Raw Data",
     description: "Payment events, buyer behavior, order patterns, disputes, macro signals",
-    color: "text-[#1DB954]",
-    bgColor: "bg-[#1DB954]/10 border-[#1DB954]/20",
-    iconBg: "bg-[#1DB954]/10",
+    color: "text-[#ff6b1a]",
+    bgColor: "bg-[#ff6b1a]/10 border-[#ff6b1a]/20",
+    iconBg: "bg-[#ff6b1a]/10",
     detail: "Every transaction generates behavioral signals: payment velocity, order frequency, dispute patterns, rail preferences. 450+ applications/day creates a growing dataset that competitors don't have.",
   },
   {
     icon: Cpu,
     label: "Compiled Intelligence",
     description: "Risk scores, buyer profiles, network credit, early warnings",
-    color: "text-[#1DB954]",
-    bgColor: "bg-[#1DB954]/10 border-[#1DB954]/20",
-    iconBg: "bg-[#1DB954]/10",
+    color: "text-[#ff6b1a]",
+    bgColor: "bg-[#ff6b1a]/10 border-[#ff6b1a]/20",
+    iconBg: "bg-[#ff6b1a]/10",
     detail: "Raw signals are compiled into structured intelligence: composite risk scores, behavioral trend analysis, network-enhanced credit assessments, and 30+ day default predictions. Knowledge doesn't reset — it compounds.",
   },
   {
     icon: Bot,
     label: "Agent Actions",
     description: "AI selects strategy, tone, timing, rail, and payment plan per case",
-    color: "text-[#1DB954]",
-    bgColor: "bg-[#1DB954]/10 border-[#1DB954]/20",
-    iconBg: "bg-[#1DB954]/10",
+    color: "text-[#ff6b1a]",
+    bgColor: "bg-[#ff6b1a]/10 border-[#ff6b1a]/20",
+    iconBg: "bg-[#ff6b1a]/10",
     detail: "The CollectIQ agent synthesizes all compiled intelligence to take action: which buyer to contact, what tone to use, when to reach out, whether to offer a payment plan or escalate. Every decision is transparent and explainable.",
   },
   {
@@ -126,7 +126,7 @@ export default function IntelligencePage() {
           </h1>
           <Badge
             variant="outline"
-            className="border-[#1DB954]/20 bg-[#1DB954]/10 text-[#1DB954]"
+            className="border-[#ff6b1a]/20 bg-[#ff6b1a]/10 text-[#ff6b1a]"
           >
             Compounding Moat
           </Badge>
@@ -140,9 +140,9 @@ export default function IntelligencePage() {
 
       {/* The Flywheel */}
       <Card className="border border-[#262626]  overflow-hidden">
-        <CardHeader className="pb-3 bg-gradient-to-r from-[#1DB954]/5 to-transparent">
+        <CardHeader className="pb-3 bg-gradient-to-r from-[#ff6b1a]/5 to-transparent">
           <CardTitle className="flex items-center gap-2 text-sm font-semibold text-[#d1d5db]">
-            <Zap className="h-4 w-4 text-[#1DB954]" />
+            <Zap className="h-4 w-4 text-[#ff6b1a]" />
             The Compounding Loop
           </CardTitle>
           <p className="text-xs text-[#9ca3af] mt-1">
@@ -189,14 +189,14 @@ export default function IntelligencePage() {
           </div>
 
           {/* Loop arrow back */}
-          <div className="mt-4 rounded-lg border-2 border-dashed border-[#1DB954]/20 bg-[#1DB954]/10 p-3 text-center">
+          <div className="mt-4 rounded-lg border-2 border-dashed border-[#ff6b1a]/20 bg-[#ff6b1a]/10 p-3 text-center">
             <div className="flex items-center justify-center gap-2">
-              <RefreshCw className="h-4 w-4 text-[#1DB954]" />
-              <span className="text-xs font-bold text-[#1DB954]">
+              <RefreshCw className="h-4 w-4 text-[#ff6b1a]" />
+              <span className="text-xs font-bold text-[#ff6b1a]">
                 The loop repeats — each cycle makes the system smarter
               </span>
             </div>
-            <p className="mt-1 text-[10px] text-[#1DB954]">
+            <p className="mt-1 text-[10px] text-[#ff6b1a]">
               This is why intelligence compounds but capital doesn&apos;t. A
               competitor with more money starts at cycle 0. Backd is already
               at cycle N.
@@ -209,7 +209,7 @@ export default function IntelligencePage() {
       <Card className="border border-[#262626] ">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-sm font-semibold text-[#d1d5db]">
-            <Brain className="h-4 w-4 text-[#1DB954]" />
+            <Brain className="h-4 w-4 text-[#ff6b1a]" />
             The Pattern: Second Brain Architecture
           </CardTitle>
           <p className="text-xs text-[#9ca3af] mt-1">
@@ -238,7 +238,7 @@ export default function IntelligencePage() {
               })}
             </div>
             <div>
-              <p className="text-[10px] font-semibold text-[#1DB954] uppercase tracking-wider mb-2">
+              <p className="text-[10px] font-semibold text-[#ff6b1a] uppercase tracking-wider mb-2">
                 CollectIQ System
               </p>
               {KARPATHY_PARALLELS.map((p) => {
@@ -246,10 +246,10 @@ export default function IntelligencePage() {
                 return (
                   <div
                     key={p.collectiq}
-                    className="flex items-start gap-2 rounded-lg border border-[#1DB954]/20 bg-[#1DB954]/10 p-2.5 mb-2"
+                    className="flex items-start gap-2 rounded-lg border border-[#ff6b1a]/20 bg-[#ff6b1a]/10 p-2.5 mb-2"
                   >
-                    <Icon className="h-3.5 w-3.5 text-[#1DB954] mt-0.5 shrink-0" />
-                    <span className="text-xs text-[#1DB954]">{p.collectiq}</span>
+                    <Icon className="h-3.5 w-3.5 text-[#ff6b1a] mt-0.5 shrink-0" />
+                    <span className="text-xs text-[#ff6b1a]">{p.collectiq}</span>
                   </div>
                 );
               })}
@@ -277,15 +277,15 @@ export default function IntelligencePage() {
               <Card key={m.metric} className="border border-[#262626] ">
                 <CardContent className="pt-5 pb-5 px-5">
                   <div className="flex items-start gap-3">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#1DB954]/10">
-                      <Icon className="h-5 w-5 text-[#1DB954]" />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#ff6b1a]/10">
+                      <Icon className="h-5 w-5 text-[#ff6b1a]" />
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="text-sm font-bold text-white">
                           {m.metric}
                         </span>
-                        <Badge className="bg-[#1DB954]/100 text-white text-[10px]">
+                        <Badge className="bg-[#ff6b1a]/100 text-white text-[10px]">
                           {m.value}
                         </Badge>
                       </div>
@@ -336,10 +336,10 @@ export default function IntelligencePage() {
             ].map(([title, desc, badge]) => (
               <div key={title}>
                 <div className="flex items-center gap-2">
-                  <p className="text-sm font-bold text-[#1DB954]">{title}</p>
+                  <p className="text-sm font-bold text-[#ff6b1a]">{title}</p>
                   <Badge
                     variant="outline"
-                    className={`text-[9px] ${badge === "Fragile" ? "border-[#ef4444]/20 text-[#ef4444]" : badge === "Compounding" ? "border-emerald-400 text-emerald-300" : "border-[#1DB954]/20 text-[#1DB954]"}`}
+                    className={`text-[9px] ${badge === "Fragile" ? "border-[#ef4444]/20 text-[#ef4444]" : badge === "Compounding" ? "border-emerald-400 text-emerald-300" : "border-[#ff6b1a]/20 text-[#ff6b1a]"}`}
                   >
                     {badge}
                   </Badge>

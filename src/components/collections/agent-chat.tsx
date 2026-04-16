@@ -154,11 +154,11 @@ export function AgentChat({
 
   if (messages.length === 0) {
     return (
-      <Card className="border-2 border-dashed border-[#1DB954]/20 bg-[#161616]">
+      <Card className="border-2 border-dashed border-[#ff6b1a]/20 bg-[#161616]">
         <CardContent className="py-6">
           <div className="flex flex-col items-center text-center">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1DB954]/10">
-              <MessageSquare className="h-6 w-6 text-[#1DB954]" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#ff6b1a]/10">
+              <MessageSquare className="h-6 w-6 text-[#ff6b1a]" />
             </div>
             <h3 className="mt-3 text-sm font-bold text-white">
               Chat with CollectIQ Agent
@@ -174,7 +174,7 @@ export function AgentChat({
                   key={q}
                   onClick={() => sendMessage(q)}
                   disabled={isStreaming || !buyer}
-                  className="rounded-full border border-[#262626] bg-[#1c1c1c] px-3 py-1.5 text-xs text-[#9ca3af] transition-colors hover:border-[#1DB954]/30 hover:text-[#1DB954] disabled:opacity-50"
+                  className="rounded-full border border-[#262626] bg-[#1c1c1c] px-3 py-1.5 text-xs text-[#9ca3af] transition-colors hover:border-[#ff6b1a]/30 hover:text-[#ff6b1a] disabled:opacity-50"
                 >
                   {q}
                 </button>
@@ -187,16 +187,16 @@ export function AgentChat({
   }
 
   return (
-    <Card className="border-2 border-[#1DB954]/30 bg-[#161616] flex flex-col">
+    <Card className="border-2 border-[#ff6b1a]/30 bg-[#161616] flex flex-col">
       <CardHeader className="pb-2 shrink-0">
         <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2 text-sm font-semibold text-[#1DB954]">
+          <CardTitle className="flex items-center gap-2 text-sm font-semibold text-[#ff6b1a]">
             <MessageSquare className="h-4 w-4" />
             Agent Chat
           </CardTitle>
           {isLive !== null && (
             isLive ? (
-              <Badge className="bg-[#1DB954] text-white text-[10px]">
+              <Badge className="bg-[#ff6b1a] text-white text-[10px]">
                 LIVE CLAUDE
               </Badge>
             ) : (
@@ -216,19 +216,19 @@ export function AgentChat({
               className={`flex gap-2.5 ${msg.role === "user" ? "justify-end" : ""}`}
             >
               {msg.role === "assistant" && (
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#1DB954]/10 mt-0.5">
-                  <Bot className="h-3.5 w-3.5 text-[#1DB954]" />
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#ff6b1a]/10 mt-0.5">
+                  <Bot className="h-3.5 w-3.5 text-[#ff6b1a]" />
                 </div>
               )}
               <div
                 className={`rounded-lg px-3 py-2 text-xs leading-relaxed max-w-[85%] ${
                   msg.role === "user"
-                    ? "bg-[#1DB954] text-white"
+                    ? "bg-[#ff6b1a] text-white"
                     : "bg-[#1c1c1c] border border-[#262626] text-[#d1d5db]"
                 }`}
               >
                 {msg.content || (
-                  <span className="flex items-center gap-1.5 text-[#1DB954]">
+                  <span className="flex items-center gap-1.5 text-[#ff6b1a]">
                     <Loader2 className="h-3 w-3 animate-spin" />
                     Analyzing...
                   </span>
@@ -251,7 +251,7 @@ export function AgentChat({
                 <button
                   key={q}
                   onClick={() => sendMessage(q)}
-                  className="flex items-center gap-1 rounded-full border border-[#262626] bg-[#1c1c1c] px-2.5 py-1 text-[10px] text-[#9ca3af] transition-colors hover:border-[#1DB954]/30 hover:text-[#1DB954]"
+                  className="flex items-center gap-1 rounded-full border border-[#262626] bg-[#1c1c1c] px-2.5 py-1 text-[10px] text-[#9ca3af] transition-colors hover:border-[#ff6b1a]/30 hover:text-[#ff6b1a]"
                 >
                   <Sparkles className="h-2.5 w-2.5" />
                   {q}
@@ -270,13 +270,13 @@ export function AgentChat({
             placeholder="Ask about this case..."
             disabled={isStreaming}
             rows={1}
-            className="flex-1 resize-none rounded-lg border border-[#262626] bg-[#1c1c1c] px-3 py-2 text-xs text-white placeholder:text-[#6b7280] focus:border-[#1DB954] focus:outline-none focus:ring-1 focus:ring-[#1DB954] disabled:opacity-50"
+            className="flex-1 resize-none rounded-lg border border-[#262626] bg-[#1c1c1c] px-3 py-2 text-xs text-white placeholder:text-[#6b7280] focus:border-[#ff6b1a] focus:outline-none focus:ring-1 focus:ring-[#ff6b1a] disabled:opacity-50"
           />
           <Button
             size="sm"
             onClick={() => sendMessage(input)}
             disabled={!input.trim() || isStreaming}
-            className="h-8 w-8 rounded-lg bg-[#1DB954] p-0 hover:bg-[#1ed760] disabled:opacity-50"
+            className="h-8 w-8 rounded-lg bg-[#ff6b1a] p-0 hover:bg-[#ff7f33] disabled:opacity-50"
           >
             {isStreaming ? (
               <Loader2 className="h-3.5 w-3.5 animate-spin" />

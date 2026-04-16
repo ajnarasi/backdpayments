@@ -16,7 +16,7 @@ const ALERT_ICONS: Record<string, typeof AlertTriangle> = {
 const SEVERITY_COLORS: Record<string, string> = {
   critical: "bg-[#ef4444]/10 text-[#ef4444] border-[#ef4444]/20",
   warning: "bg-[#f59e0b]/10 text-[#f59e0b] border-[#f59e0b]/20",
-  info: "bg-[#1DB954]/10 text-[#1DB954] border-[#1DB954]/20",
+  info: "bg-[#ff6b1a]/10 text-[#ff6b1a] border-[#ff6b1a]/20",
 };
 
 export function RecentAlerts({ alerts }: { alerts: RiskAlert[] }) {
@@ -35,7 +35,7 @@ export function RecentAlerts({ alerts }: { alerts: RiskAlert[] }) {
                   ? "bg-red-100 text-[#ef4444]"
                   : alert.severity === "warning"
                     ? "bg-[#f59e0b]/10 text-[#f59e0b]"
-                    : "bg-[#1DB954]/10 text-[#1DB954]"
+                    : "bg-[#ff6b1a]/10 text-[#ff6b1a]"
               }`}
             >
               <Icon className="h-3 w-3" />

@@ -35,7 +35,7 @@ export default function PitchPage() {
           className="deck-section"
           style={{
             background: `
-              radial-gradient(circle 900px at 30% 40%, rgba(29,185,84,0.08) 0%, rgba(29,185,84,0.03) 40%, rgba(14,14,14,0) 70%),
+              radial-gradient(circle 900px at 30% 40%, rgba(255,107,26,0.08) 0%, rgba(255,107,26,0.03) 40%, rgba(14,14,14,0) 70%),
               #0e0e0e
             `,
           }}
@@ -52,8 +52,7 @@ export default function PitchPage() {
             before they happen and collecting autonomously when they don&apos;t pay.
           </p>
           <p className="deck-body" style={{ marginTop: 16 }}>
-            Ajay Narasimmamoorthy &middot; Senior PM &middot; 13 years at Fiserv &amp; Visa<br />
-            <span style={{ color: 'var(--text-muted)' }}>Prepared for the CEO and Chief Product Officer</span>
+            Ajay Narasimmamoorthy &middot; Senior Director, Product &middot; 14 years at Pfizer, Visa &amp; Microsoft
           </p>
           <p style={{ marginTop: 48, fontSize: '0.8rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
             Scroll to begin ↓
@@ -116,8 +115,8 @@ export default function PitchPage() {
               return (
                 <div key={mod.num} className="deck-card green">
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
-                    <div style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(29,185,84,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Icon size={22} color="#1DB954" />
+                    <div style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(255,107,26,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Icon size={22} color="#ff6b1a" />
                     </div>
                     <span style={{ fontSize: '2rem', fontWeight: 900, color: 'var(--border-strong)' }}>{mod.num}</span>
                   </div>

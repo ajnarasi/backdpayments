@@ -18,17 +18,17 @@ const STAGE_LABELS: Record<string, string> = {
 };
 
 const STAGE_COLORS: Record<string, string> = {
-  pre_due: "bg-[#1DB954]/10 text-[#1DB954] border-[#1DB954]/20",
+  pre_due: "bg-[#ff6b1a]/10 text-[#ff6b1a] border-[#ff6b1a]/20",
   reminder: "bg-sky-50 text-sky-700 border-sky-200",
   follow_up: "bg-[#f59e0b]/10 text-[#f59e0b] border-[#f59e0b]/20",
   escalation: "bg-[#f97316]/10 text-[#f97316] border-[#f97316]/20",
   final_notice: "bg-[#ef4444]/10 text-[#ef4444] border-[#ef4444]/20",
   collections_team: "bg-red-100 text-red-800 border-red-300",
-  resolved: "bg-[#1DB954]/10 text-[#1DB954] border-[#1DB954]/20",
+  resolved: "bg-[#ff6b1a]/10 text-[#ff6b1a] border-[#ff6b1a]/20",
 };
 
 const TIER_COLORS: Record<string, string> = {
-  low: "bg-[#1DB954]/10 text-[#1DB954] border-[#1DB954]/20",
+  low: "bg-[#ff6b1a]/10 text-[#ff6b1a] border-[#ff6b1a]/20",
   medium: "bg-[#f59e0b]/10 text-[#f59e0b] border-[#f59e0b]/20",
   high: "bg-[#f97316]/10 text-[#f97316] border-[#f97316]/20",
   critical: "bg-[#ef4444]/10 text-[#ef4444] border-[#ef4444]/20",
@@ -81,7 +81,7 @@ export function CollectionsList({ cases }: { cases: CollectionCase[] }) {
             <div
               className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
                 c.id.startsWith("case-showcase")
-                  ? "bg-[#1DB954]/10 text-[#1DB954]"
+                  ? "bg-[#ff6b1a]/10 text-[#ff6b1a]"
                   : "bg-[#1c1c1c] text-[#9ca3af]"
               }`}
             >
@@ -99,7 +99,7 @@ export function CollectionsList({ cases }: { cases: CollectionCase[] }) {
                   {c.buyerName}
                 </span>
                 {c.id.startsWith("case-showcase") && (
-                  <Badge className="bg-[#1DB954]/100 text-white text-[9px] px-1.5 py-0">
+                  <Badge className="bg-[#ff6b1a]/100 text-white text-[9px] px-1.5 py-0">
                     SHOWCASE
                   </Badge>
                 )}
@@ -120,7 +120,7 @@ export function CollectionsList({ cases }: { cases: CollectionCase[] }) {
                   {formatCurrency(c.amount)}
                 </p>
                 {c.recoveredAmount > 0 && (
-                  <p className="text-[10px] text-[#1DB954]">
+                  <p className="text-[10px] text-[#ff6b1a]">
                     {Math.round((c.recoveredAmount / c.amount) * 100)}% recovered
                   </p>
                 )}

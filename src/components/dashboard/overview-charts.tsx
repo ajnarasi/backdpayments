@@ -79,8 +79,8 @@ export function OverviewCharts({ trends }: { trends: MonthlyTrend[] }) {
                 type="monotone"
                 dataKey="totalVolume"
                 name="Volume"
-                stroke="#1DB954"
-                fill="#1DB954"
+                stroke="#ff6b1a"
+                fill="#ff6b1a"
                 fillOpacity={0.1}
                 strokeWidth={2}
               />
@@ -89,8 +89,8 @@ export function OverviewCharts({ trends }: { trends: MonthlyTrend[] }) {
                 type="monotone"
                 dataKey="recoveryRate"
                 name="Recovery Rate"
-                stroke="#158a3e"
-                fill="#158a3e"
+                stroke="#b34a0f"
+                fill="#b34a0f"
                 fillOpacity={0.05}
                 strokeWidth={2}
               />

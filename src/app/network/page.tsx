@@ -21,7 +21,7 @@ export default function NetworkPage() {
           </h1>
           <Badge
             variant="outline"
-            className="border-[#1DB954]/20 bg-[#1DB954]/10 text-[#1DB954]"
+            className="border-[#ff6b1a]/20 bg-[#ff6b1a]/10 text-[#ff6b1a]"
           >
             Strategic Vision
           </Badge>
@@ -50,7 +50,7 @@ export default function NetworkPage() {
         <Card className="bg-[#161616] border border-[#262626]">
           <CardContent className="pt-4 pb-3 px-4">
             <p className="text-[10px] font-semibold text-[#6b7280] uppercase tracking-wider">Expansion Opps</p>
-            <p className="mt-1 text-2xl font-bold text-[#1DB954]">
+            <p className="mt-1 text-2xl font-bold text-[#ff6b1a]">
               {networkInsights.filter((i) => i.type === "expansion").length}
             </p>
             <p className="text-xs text-[#6b7280]">

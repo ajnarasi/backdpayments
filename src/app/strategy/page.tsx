@@ -102,7 +102,7 @@ export default function StrategyPage() {
           </h1>
           <Badge
             variant="outline"
-            className="border-[#1DB954]/20 bg-[#1DB954]/10 text-[#1DB954]"
+            className="border-[#ff6b1a]/20 bg-[#ff6b1a]/10 text-[#ff6b1a]"
           >
             Head of Product Vision
           </Badge>
@@ -118,9 +118,9 @@ export default function StrategyPage() {
         {PHASES.map((phase, idx) => {
           const Icon = phase.icon;
           const colors = {
-            blue: { bg: "bg-[#1DB954]/10", border: "border-[#1DB954]/20", text: "text-[#1DB954]", iconBg: "bg-[#1DB954]/10 text-[#1DB954]", badge: "border-[#1DB954]/20 bg-[#1DB954]/10 text-[#1DB954]" },
-            violet: { bg: "bg-[#1DB954]/10", border: "border-[#1DB954]/20", text: "text-[#1DB954]", iconBg: "bg-[#1DB954]/10 text-[#1DB954]", badge: "border-[#1DB954]/20 bg-[#1DB954]/10 text-[#1DB954]" },
-            emerald: { bg: "bg-[#1DB954]/10", border: "border-[#1DB954]/20", text: "text-[#1DB954]", iconBg: "bg-[#1DB954]/10 text-[#1DB954]", badge: "border-emerald-300 bg-[#1DB954]/10 text-[#1DB954]" },
+            blue: { bg: "bg-[#ff6b1a]/10", border: "border-[#ff6b1a]/20", text: "text-[#ff6b1a]", iconBg: "bg-[#ff6b1a]/10 text-[#ff6b1a]", badge: "border-[#ff6b1a]/20 bg-[#ff6b1a]/10 text-[#ff6b1a]" },
+            violet: { bg: "bg-[#ff6b1a]/10", border: "border-[#ff6b1a]/20", text: "text-[#ff6b1a]", iconBg: "bg-[#ff6b1a]/10 text-[#ff6b1a]", badge: "border-[#ff6b1a]/20 bg-[#ff6b1a]/10 text-[#ff6b1a]" },
+            emerald: { bg: "bg-[#ff6b1a]/10", border: "border-[#ff6b1a]/20", text: "text-[#ff6b1a]", iconBg: "bg-[#ff6b1a]/10 text-[#ff6b1a]", badge: "border-emerald-300 bg-[#ff6b1a]/10 text-[#ff6b1a]" },
           }[phase.color]!;
 
           return (
@@ -194,7 +194,7 @@ export default function StrategyPage() {
                       {m.before}
                     </span>
                     <ArrowRight className="h-3 w-3 text-[#3a3a3a]" />
-                    <span className="text-lg font-bold text-[#1DB954]">
+                    <span className="text-lg font-bold text-[#ff6b1a]">
                       {m.after}
                     </span>
                   </div>
@@ -250,7 +250,7 @@ export default function StrategyPage() {
               ["Agentic AI + Engineering", "Currently building agentic payment flows. 8 years as a software engineer before PM. I don't just spec — I build."],
             ].map(([title, desc]) => (
               <div key={title}>
-                <p className="text-sm font-bold text-[#1DB954]">{title}</p>
+                <p className="text-sm font-bold text-[#ff6b1a]">{title}</p>
                 <p className="mt-1 text-xs text-[#9ca3af]">{desc}</p>
               </div>
             ))}

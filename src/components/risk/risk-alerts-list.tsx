@@ -41,7 +41,7 @@ export function RiskAlertsList({ alerts }: { alerts: RiskAlert[] }) {
                 ? "border-[#ef4444]/20 bg-[#ef4444]/10/50"
                 : alert.severity === "warning"
                   ? "border-[#f59e0b]/20 bg-[#f59e0b]/10/30"
-                  : "border-[#1DB954]/20 bg-[#1DB954]/10"
+                  : "border-[#ff6b1a]/20 bg-[#ff6b1a]/10"
             }`}
           >
             <div className="flex items-start gap-2.5">
@@ -51,7 +51,7 @@ export function RiskAlertsList({ alerts }: { alerts: RiskAlert[] }) {
                     ? "bg-red-100 text-[#ef4444]"
                     : alert.severity === "warning"
                       ? "bg-[#f59e0b]/10 text-[#f59e0b]"
-                      : "bg-[#1DB954]/10 text-[#1DB954]"
+                      : "bg-[#ff6b1a]/10 text-[#ff6b1a]"
                 }`}
               >
                 <Icon className="h-3.5 w-3.5" />
@@ -68,7 +68,7 @@ export function RiskAlertsList({ alerts }: { alerts: RiskAlert[] }) {
                         ? "border-red-300 text-[#ef4444]"
                         : alert.severity === "warning"
                           ? "border-[#f59e0b]/20 text-[#f59e0b]"
-                          : "border-[#1DB954]/20 text-[#1DB954]"
+                          : "border-[#ff6b1a]/20 text-[#ff6b1a]"
                     }`}
                   >
                     {ALERT_LABELS[alert.alertType]}
@@ -102,7 +102,7 @@ export function RiskAlertsList({ alerts }: { alerts: RiskAlert[] }) {
                           sig.trend === "declining"
                             ? "bg-red-100 text-[#ef4444]"
                             : sig.trend === "improving"
-                              ? "bg-[#1DB954]/10 text-[#1DB954]"
+                              ? "bg-[#ff6b1a]/10 text-[#ff6b1a]"
                               : "bg-[#1c1c1c] text-[#9ca3af]"
                         }`}
                       >

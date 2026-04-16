@@ -51,7 +51,7 @@
 /* ================================================================
    Backd CollectIQ — Design System
    Pixel-matched to Fiserv Brain Executive Brief (localhost:3100)
-   Accent: Spotify Green #1DB954 (replaces #ff6b1a orange)
+   Accent: Pfizer Orange #ff6b1a
    ================================================================ */
 
 :root {
@@ -61,14 +61,14 @@
   --bg-card-light: #1c1c1c;
   --border: #262626;
   --border-strong: #3a3a3a;
-  --accent: #1DB954;
-  --accent-hover: #1ed760;
-  --accent-dim: #158a3e;
-  --accent-glow: rgba(29, 185, 84, 0.25);
-  --accent-green: #1DB954;
+  --accent: #ff6b1a;
+  --accent-hover: #ff7f33;
+  --accent-dim: #b34a0f;
+  --accent-glow: rgba(255, 107, 26, 0.25);
+  --accent-green: #ff6b1a;
   --accent-red: #ef4444;
   --accent-amber: #f59e0b;
-  --accent-purple: #a78bfa;
+  --accent-purple: #ffa061;
   --text-primary: #fafafa;
   --text-secondary: #9ca3af;
   --text-muted: #6b7280;
@@ -82,7 +82,7 @@
   --card-foreground: #fafafa;
   --popover: #1c1c1c;
   --popover-foreground: #fafafa;
-  --primary: #1DB954;
+  --primary: #ff6b1a;
   --primary-foreground: #ffffff;
   --secondary: #1c1c1c;
   --secondary-foreground: #fafafa;
@@ -93,21 +93,21 @@
   --destructive: #ef4444;
   --border: #262626;
   --input: #262626;
-  --ring: #1DB954;
-  --chart-1: #1DB954;
-  --chart-2: #1ed760;
-  --chart-3: #158a3e;
-  --chart-4: #3ee85a;
-  --chart-5: #0d5c26;
+  --ring: #ff6b1a;
+  --chart-1: #ff6b1a;
+  --chart-2: #ffa061;
+  --chart-3: #b34a0f;
+  --chart-4: #ff7f33;
+  --chart-5: #7a2d00;
   --radius: 1rem;
   --sidebar: #0e0e0e;
   --sidebar-foreground: #fafafa;
-  --sidebar-primary: #1DB954;
+  --sidebar-primary: #ff6b1a;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #1c1c1c;
   --sidebar-accent-foreground: #fafafa;
   --sidebar-border: #262626;
-  --sidebar-ring: #1DB954;
+  --sidebar-ring: #ff6b1a;
 }
 
 @layer base {

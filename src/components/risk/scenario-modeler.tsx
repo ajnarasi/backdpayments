@@ -119,7 +119,7 @@ export function ScenarioModeler() {
                 onClick={() => setTierCutoff(opt.value)}
                 className={`rounded px-2.5 py-1.5 text-[10px] font-medium transition-colors ${
                   tierCutoff === opt.value
-                    ? "bg-[#1DB954]/100 text-white"
+                    ? "bg-[#ff6b1a]/100 text-white"
                     : "bg-[#1c1c1c] text-[#9ca3af] hover:bg-[#262626]"
                 }`}
               >
@@ -167,7 +167,7 @@ export function ScenarioModeler() {
           <div key={label as string} className="flex items-center justify-between">
             <span className="text-xs text-[#9ca3af]">{label as string}</span>
             <span
-              className={`text-xs font-bold ${isPositive ? "text-[#1DB954]" : "text-[#ef4444]"}`}
+              className={`text-xs font-bold ${isPositive ? "text-[#ff6b1a]" : "text-[#ef4444]"}`}
             >
               {value as string}
             </span>

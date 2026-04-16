@@ -4,7 +4,7 @@ import { useRef, useCallback, useEffect, useState } from "react";
 import type { NetworkNode, NetworkEdge } from "@/types";
 
 const TIER_COLORS: Record<string, string> = {
-  low: "#1DB954",
+  low: "#ff6b1a",
   medium: "#F59E0B",
   high: "#F97316",
   critical: "#EF4444",
@@ -146,7 +146,7 @@ export function NetworkGraph({
           <span>Seller</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-          <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#1DB954' }} />
+          <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#ff6b1a' }} />
           <span>Low Risk Buyer</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>

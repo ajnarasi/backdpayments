@@ -17,7 +17,7 @@ export function ABComparisonTable({ data }: { data: ABComparison[] }) {
             <div className="flex items-center justify-between text-xs">
               <span className="font-medium text-[#9ca3af]">{row.metric}</span>
               <span
-                className={`font-bold ${isPositive ? "text-[#1DB954]" : "text-[#ef4444]"}`}
+                className={`font-bold ${isPositive ? "text-[#ff6b1a]" : "text-[#ef4444]"}`}
               >
                 {row.improvement > 0 ? "+" : ""}
                 {row.improvement.toFixed(1)}%
@@ -47,9 +47,9 @@ export function ABComparisonTable({ data }: { data: ABComparison[] }) {
                     {row.unit === "$" ? `$${row.agentManaged}` : `${row.agentManaged}${row.unit}`}
                   </span>
                 </div>
-                <div className="h-1.5 rounded-full bg-[#1DB954]/10">
+                <div className="h-1.5 rounded-full bg-[#ff6b1a]/10">
                   <div
-                    className="h-1.5 rounded-full bg-[#1DB954]"
+                    className="h-1.5 rounded-full bg-[#ff6b1a]"
                     style={{
                       width: `${Math.min(100, (row.agentManaged / Math.max(row.ruleBased, row.agentManaged)) * 100)}%`,
                     }}

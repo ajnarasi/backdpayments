@@ -15,7 +15,7 @@ const STAGE_LABELS: Record<string, string> = {
 };
 
 const TIER_COLORS: Record<string, string> = {
-  low: "bg-[#1DB954]/10 text-[#1DB954] border-[#1DB954]/20",
+  low: "bg-[#ff6b1a]/10 text-[#ff6b1a] border-[#ff6b1a]/20",
   medium: "bg-[#f59e0b]/10 text-[#f59e0b] border-[#f59e0b]/20",
   high: "bg-[#f97316]/10 text-[#f97316] border-[#f97316]/20",
   critical: "bg-[#ef4444]/10 text-[#ef4444] border-[#ef4444]/20",
@@ -59,7 +59,7 @@ export function ActiveCases({ cases }: { cases: CollectionCase[] }) {
             </span>
           </div>
           {c.recoveredAmount > 0 && (
-            <div className="mt-1 text-[10px] text-[#1DB954]">
+            <div className="mt-1 text-[10px] text-[#ff6b1a]">
               Recovered: {formatCurrency(c.recoveredAmount)} (
               {Math.round((c.recoveredAmount / c.amount) * 100)}%)
             </div>
