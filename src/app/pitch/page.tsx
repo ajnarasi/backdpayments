@@ -35,7 +35,7 @@ export default function PitchPage() {
           className="deck-section"
           style={{
             background: `
-              radial-gradient(circle 900px at 30% 40%, rgba(255,107,26,0.08) 0%, rgba(255,107,26,0.03) 40%, rgba(14,14,14,0) 70%),
+              radial-gradient(ellipse at 30% 40%, rgba(255,107,26,0.25) 0%, rgba(255,107,26,0.08) 30%, rgba(14,14,14,0) 60%),
               #0e0e0e
             `,
           }}
@@ -52,7 +52,7 @@ export default function PitchPage() {
             before they happen and collecting autonomously when they don&apos;t pay.
           </p>
           <p className="deck-body" style={{ marginTop: 16 }}>
-            Ajay Narasimmamoorthy &middot; Senior Director, Product &middot; 14 years at Pfizer, Visa &amp; Microsoft
+            Ajay Narasimmamoorthy &middot; Senior Director, Product &middot; 14 years at Fiserv, Visa &amp; Microsoft
           </p>
           <p style={{ marginTop: 48, fontSize: '0.8rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
             Scroll to begin ↓
