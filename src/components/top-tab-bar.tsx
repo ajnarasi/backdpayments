@@ -9,13 +9,33 @@ const TABS = [
   { href: "/collections", label: "Collections" },
   { href: "/risk", label: "Risk" },
   { href: "/network", label: "Network" },
+  { href: "/cs-brain", label: "Compass" },
+  { href: "/cs-brain/why", label: "Thesis" },
   { href: "/intelligence", label: "Flywheel" },
   { href: "/strategy", label: "Roadmap" },
   { href: "/checkout", label: "Checkout" },
 ];
 
+// Pick the longest href that matches the current pathname so the most
+// specific tab wins (e.g. "/cs-brain/why" beats "/cs-brain" on that page).
+function activeHref(pathname: string): string {
+  let best = "";
+  for (const tab of TABS) {
+    if (tab.href === "/") continue;
+    if (
+      pathname === tab.href ||
+      pathname.startsWith(tab.href + "/")
+    ) {
+      if (tab.href.length > best.length) best = tab.href;
+    }
+  }
+  if (best) return best;
+  return pathname === "/" ? "/" : "";
+}
+
 export function TopTabBar() {
   const pathname = usePathname();
+  const current = activeHref(pathname);
 
   return (
     <nav className="tab-bar" aria-label="Top-level navigation">
@@ -34,10 +54,7 @@ export function TopTabBar() {
 
       {/* Tabs */}
       {TABS.map((tab) => {
-        const isActive =
-          tab.href === "/"
-            ? pathname === "/"
-            : pathname.startsWith(tab.href);
+        const isActive = tab.href === current;
         return (
           <Link
             key={tab.href}
